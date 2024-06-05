@@ -15,6 +15,7 @@ window.onmouseup = (e) => {
   foo.textContent = "Up";
 
   track.dataset.mouseDownAt = "0";
+  track.dataset.prevPercentage = track.dataset.percentage;
 };
 
 window.onmousemove = (e) => {
@@ -23,18 +24,21 @@ window.onmousemove = (e) => {
   foo.textContent = `${track.dataset.mouseDownAt} moving ${e.clientX}  `;
   // console.log("mouse move", track.dataset.mouseDownAt);
   // console.log("foo");
-  // if (track.dataset.mouseDownAt === "0") {
-  // return;
-  //  }
+  if (track.dataset.mouseDownAt === "0") {
+    return;
+  }
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
   const maxDelta = window.innerWidth / 2;
-  const percentage = (mouseDelta / maxDelta) * 100;
+  const percentage = (mouseDelta / maxDelta) * -100;
+  const nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
 
   const bar = document.getElementById("bar");
-  // bar.textContent = `${percentage}`;
+  // bar.textContent = `${percentage} -- ${nextPercentage} -- ${track.dataset.percentage}`;
+  bar.textContent = `${e.clientX} -- ${percentage} -- ${nextPercentage} == ${track.dataset.prevPercentage}`;
 
   // console.log(percentage);
   // track.style.transform = `translateX(${percentage}%)`;
 
-  track.style.transform = `translate(${percentage}%, 50%)`;
+  track.dataset.percentage = nextPercentage;
+  track.style.transform = `translate(${nextPercentage}%, 50%)`;
 };
