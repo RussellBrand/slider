@@ -1,0 +1,34 @@
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  background-color: gold;
+  margin: 0rem;
+  overflow: hidden;
+
+  border: white 10px solid;
+}
+#foo {
+  font-size: 40px;
+}
+#bar {
+  font-size: 40px;
+}
+#image-track > .image {
+  width: 50vmin;
+  height: 50vmin;
+  object-fit: cover;
+  object-position: center;
+}
+
+#image-track {
+  border: blue 3px solid;
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  height: 40vmin;
+  width: 40vmin;
+  transform: translate(0%, -50%);
+}
