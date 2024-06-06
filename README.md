@@ -59,6 +59,10 @@ use the `--prod` flag to make a release
 
 `$ make release`
 
+## Directory Layout
+Everything of interest in is in `public/`.
+
+The director above that is just to handle deployment.
 ## License
 
 GNU General Public License (GPL) is version 3
@@ -77,9 +81,9 @@ GNU General Public License (GPL) is version 3
 There is a 10meg limit unless we use external hosting
 
 
-### home page
+### project home page
 
-Add titles, explanations, and links to the repository.
+Add link back to the repository as well as titles and explanations.
 
 ### show commentary
 
