@@ -1,5 +1,5 @@
 run:
-	deno run --allow-net  --allow-read run_slider.ts
+	deno run --allow-net  --allow-read main.ts
 
 run-server:
 	file_server public
@@ -12,6 +12,9 @@ view-long:
 
 deploy:
 	deployctl deploy
+
+release: 
+	deployctl deploy --prod
 
 demo:
 	deno run --allow-net main.ts
