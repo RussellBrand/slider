@@ -2,6 +2,10 @@
   "deploy": {
     "project": "d6514764-06b6-4d73-aff0-8c37cb456305",
     "exclude": [
+      "**/node_modules",
+      "video/",
+      "**/node_modules",
+      "**/node_modules",
       "**/node_modules"
     ],
     "include": [],
